@@ -1,7 +1,8 @@
 const { Router } = require('express');
 const axios = require("axios")
-const {Op, Country, Activity} = require("../db.js");
-const e = require('express');
+const { Op } = require("sequelize");
+const {Country, Activity} = require("../db.js");
+
 
 
 
@@ -31,7 +32,7 @@ const getApiInfo = async () => {
     return map
     };
 
-    //Carga
+    //Cargando datos
     const countriesToDb = async () => {
         try {
             const countries = await Country.findAll();
@@ -44,7 +45,7 @@ const getApiInfo = async () => {
         }
     };
 
-    //alimenta la DB con lo que trajo
+    //Poblar db con datos cargados
     const loadCountries = async () => { await countriesToDb() }
     loadCountries();
 
@@ -72,8 +73,8 @@ router.get("/countries", async (req, res) => {
      } else {
         const country = await Country.findAll({
             where: {
+                // name: {[Op.iLike]: name} 
                 name: {[Op.substring]: name} 
-                // name: {[Op.substring]: name} 
             },
             include: [{ 
                 model: Activity,

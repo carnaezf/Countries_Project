@@ -17,6 +17,17 @@ router.get('/activities', async (req, res) => {
   
   });
 
+
+
+
+
+
+
+
+
+
+  
+
 // Ruta para postear actividades
 router.post('/activities', async (req, res,) => {
   try {

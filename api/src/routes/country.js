@@ -73,8 +73,7 @@ router.get("/countries", async (req, res) => {
      } else {
         const country = await Country.findAll({
             where: {
-                // name: {[Op.iLike]: name} 
-                name: {[Op.substring]: name} 
+                name: {[Op.iLike]: name} // Esto permite hacer busquedas que no sean case sentitive
             },
             include: [{ 
                 model: Activity,

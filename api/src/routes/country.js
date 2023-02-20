@@ -60,7 +60,7 @@ router.get("/countries", async (req, res) => {
             const countries = await Country.findAll({
                 include:[{
                     model: Activity,
-                    attributes: [ 'name', 'difficulty', 'duration', 'season',],
+                    attributes: [ 'name', 'difficulty', 'duration', 'season', 'countries' ],
                     through: { attributes:[] }
                 }]
             })
@@ -77,7 +77,7 @@ router.get("/countries", async (req, res) => {
             },
             include: [{ 
                 model: Activity,
-                attributes: [ 'name', 'difficulty', 'duration', 'season',],
+                attributes: [ 'name', 'difficulty', 'duration', 'season', 'countries' ],
                 through: { attributes: [] }
             }] 
         })  
@@ -104,7 +104,7 @@ router.get('/countries/:idPais', async (req, res) => {
             }, 
             include: [{ 
                 model: Activity,
-                attributes: [ 'name', 'difficulty', 'duration', 'season',],
+                attributes: [ 'name', 'difficulty', 'duration', 'season', 'countries' ],
                 through: { attributes: [] }
             }] 
           })

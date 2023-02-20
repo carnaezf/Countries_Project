@@ -18,18 +18,8 @@ router.get('/activities', async (req, res) => {
   });
 
 
-
-
-
-
-
-
-
-
-  
-
 // Ruta para postear actividades
-router.post('/activities', async (req, res,) => {
+router.post('/activities', async (req, res, next) => {
   try {
     const {name, difficulty, duration, season, countries} = req.body
     if(name && difficulty && duration && season && countries){
@@ -37,7 +27,8 @@ router.post('/activities', async (req, res,) => {
                 name,
                 difficulty,
                 duration,
-                season         
+                season,
+                countries       
             });
 
         countries.forEach(async (id) => {

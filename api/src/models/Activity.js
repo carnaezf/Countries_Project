@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
           max: 5,
           isEven(value) {
             if(value < 1 || value > 5) {
-              throw new Error("La dificultad debe ser entre 1 y 5")
+              throw new Error("Difficulty must be between 1 and 5")
             }
           }
         }
@@ -28,15 +28,20 @@ module.exports = (sequelize) => {
           max: 24,
           isEven(value) {
             if(value < 1 || value > 24) {
-              throw new Error('La duración debe ser de 1 a 24')
+              throw new Error('The duration should be between 1 and 24 hrs.')
             }
           } 
         }   
       },
       season: {
-        type: DataTypes.ENUM("Verano", "Otoño", "Invierno", "Primavera"),
+        type: DataTypes.ENUM("Summer", "Fall", "Winter", "Spring"),
         allowNull: false,
       },
+
+      countries:{
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        allowNull: false,
+      }
     } , {
       timestamps: false
     }

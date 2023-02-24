@@ -5,12 +5,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCountries } from '../../redux/actions'
 import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
+import Paged from '../Paged/Paged';
 
 export default function Home() {
 
     const dispatch = useDispatch();
     const allCountries = useSelector(state => state.countries);
     console.log(allCountries);
+
+    const [currentPage, setCurentPage] = useState(1);
+    const [countriesPerPage, setCountriesPerPage] = useState(10);
+    const indexOfLastCountry = currentPage * countriesPerPage;
+    const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
+    const currentCountries = allCountries.slice(indexOfFirstCountry, indexOfLastCountry);
+
+    const paged = (pageNumber) => {
+        setCurentPage(pageNumber);
+    }
 
     useEffect(() => {
         dispatch(getCountries())
@@ -45,9 +56,13 @@ export default function Home() {
                     <option value="Africa">Africa</option>
                     <option value="Europe">Europe</option>
                 </select>
+                <Paged
+                    countriesPerPage={ countriesPerPage }
+                    allCountries={ allCountries.length }
+                    paged={ paged }
+                />
             {
-                
-                allCountries?.map(country => {
+                currentCountries?.map(country => {
                     return (
                         <div className='home'>
                             <Link to={`/home/${country.id}`} >
@@ -57,7 +72,7 @@ export default function Home() {
                                     name={country.name}
                                     continent={country.continent}
                                     flag={country.flag}
-                                    />
+                                />
                             </Link>
                         </div>
                     )

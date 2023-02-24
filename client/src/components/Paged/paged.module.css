@@ -1,0 +1,9 @@
+.paged {
+    display: flex;
+    border: solid 1px black;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: auto;
+    list-style:none
+}

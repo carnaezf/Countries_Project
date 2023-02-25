@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_COUNTRIES, FILTER_COUNTRIES_BY_CONTINENT } from './actions-types'
+import { GET_COUNTRIES, FILTER_COUNTRIES_BY_CONTINENT, GET_TOURIST_ACTIVITIES, FILTER_BY_ACTIVITIES} from './actions-types'
 
 
 export function getCountries() {
@@ -19,4 +19,25 @@ export function filterCountriesByContinent(payload) {
         payload
     }
 }
+
+export function filterByAct(activity) {
+    return {
+        type: FILTER_BY_ACTIVITIES,
+        payload: activity
+    }
+}
+
+export function getActivities(){
+    return (dispatch) => {
+        axios
+            .get('http://localhost:3001/activities/')
+            .then((info) => {
+                return dispatch({
+                    type: GET_TOURIST_ACTIVITIES,
+                    payload: info.data,
+                });
+            })
+            .catch((err) => console.log(err));
+        };
+};
 

@@ -11,15 +11,17 @@ export default function Paged({ countriesPerPage, allCountries, paged }) {
     console.log(pageNumbers);
     return (
         <nav>
-        <ul className={style.paged}>
-            {pageNumbers &&
-            pageNumbers.map((number) => (
-                <li key={number}>
-                    {/* <a onClick={() => paged(number)} href="/"> */}
-                    <a onClick={() => paged(number)}>{number}</a>
-                </li>
-            ))}
-        </ul>
+            <ul>
+                {
+                    pageNumbers &&
+                    pageNumbers.map(number => (
+                        
+                        <button className={style.botpag} key={number} onClick={() => paged(number)}>{number}</button>
+                        
+                    ))
+                }
+            </ul>
+
         </nav>
     );
     }

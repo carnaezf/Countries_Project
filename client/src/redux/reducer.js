@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, FILTER_COUNTRIES_BY_CONTINENT } from './actions-types'
+import { GET_COUNTRIES, FILTER_COUNTRIES_BY_CONTINENT,GET_TOURIST_ACTIVITIES } from './actions-types'
 
 
 const initialState = {
@@ -21,6 +21,12 @@ function rootReducer (state=initialState, action) {
                 ...state,
                 countries: continentFiltered
             }
+        case GET_TOURIST_ACTIVITIES:
+            return{
+                ...state,
+                allActivities: action.payload
+            }           
+            
 
         default:
             return state;

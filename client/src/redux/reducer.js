@@ -1,8 +1,9 @@
-import { GET_COUNTRIES } from './actions-types'
+import { GET_COUNTRIES, FILTER_COUNTRIES_BY_CONTINENT } from './actions-types'
 
 
 const initialState = {
-    countries: []
+    countries: [],
+    allCountries: []
 }
 
 function rootReducer (state=initialState, action) {
@@ -10,8 +11,17 @@ function rootReducer (state=initialState, action) {
         case GET_COUNTRIES:
             return {
                 ...state,
-                countries: action.payload
+                countries: action.payload,
+                allCountries: action.payload
             }
+        case FILTER_COUNTRIES_BY_CONTINENT:
+            const allCountries = state.allCountries;
+            const continentFiltered = action.payload === 'All' ? allCountries : allCountries.filter(country => country.continent === action.payload);
+            return {
+                ...state,
+                countries: continentFiltered
+            }
+
         default:
             return state;
     }

@@ -15,12 +15,12 @@ export default function Paged({ countriesPerPage, allCountries, paged }) {
             {pageNumbers &&
             pageNumbers.map((number) => (
                 <li key={number}>
-                    <a onClick={() => paged(number)} href="!#">
-                        {number}
-                    </a>
+                    {/* <a onClick={() => paged(number)} href="/"> */}
+                    <a onClick={() => paged(number)}>{number}</a>
                 </li>
             ))}
         </ul>
         </nav>
     );
     }
+

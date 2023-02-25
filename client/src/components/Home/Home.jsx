@@ -2,7 +2,7 @@ import './home.module.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCountries } from '../../redux/actions'
+import { getCountries, filterCountriesByContinent } from '../../redux/actions'
 import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import Paged from '../Paged/Paged';
@@ -33,12 +33,18 @@ export default function Home() {
         dispatch(getCountries())
     }
 
+    // Esto es un filtro.
+    function handleFilterbyContinent(event) {
+        // event.preventDefault();
+        dispatch(filterCountriesByContinent(event.target.value))
+    }
+
 
     return (
         <div >
             <Link to='/activities'>Create Activity</Link>
             <h1>HOME COUNTRIES</h1>
-            <button onClick={ shindig => {handleClick(shindig)}}>
+            <button onClick={ event => handleClick(event)}>
                 Reload all countries
             </button>
             <div>
@@ -46,7 +52,7 @@ export default function Home() {
                     <option value="asc">Ascendant</option>
                     <option value="desc">Descending</option>
                 </select>
-                <select>
+                <select  onChange={ event => handleFilterbyContinent(event)}>
                 <option value="All">All</option>
                     <option value="Asia">Asia</option>
                     <option value="South America">South America</option>
@@ -82,5 +88,6 @@ export default function Home() {
             </div>
         </div>
     )
-
 }
+
+// currentCountries.map

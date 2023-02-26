@@ -92,14 +92,14 @@ export default function Home() {
                 </div>
                 <div>
                     Search by Activity:
-                    {/* {(activities?.length === 0)? <p>No activities have been created</p> :
+                    {(activities?.length === 0)? <p>No activities have been created</p> :
                     <select onChange={e => handleFilterByAct(e)}>
                     <option value="none"></option>
-                    {activities.map(e => (
+                    {activities?.map(e => (
                     <option value={e.name} key={e.id}>{e.name}</option>
                     ))}
                 </select>
-                } */}
+                }
                 </div>
             <div>
                 <Paged

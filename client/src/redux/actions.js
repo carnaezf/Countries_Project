@@ -5,6 +5,8 @@ import {
         GET_TOURIST_ACTIVITIES, 
         FILTER_BY_ACTIVITIES, 
         ORDER_ALPHABETICALLY_BY_NAME,
+        GET_COUNTRY_BY_NAME
+
         } from './actions-types'
 
 
@@ -18,7 +20,24 @@ export function getCountries() {
     }
 };
 
+// Si hay error revisar video jueves 11 min.
+export function getCountryByName(name) {
+    return async function(dispatch) {
+        try {
+            const response = await axios.get(`http://localhost:3001/countries?name=${name}`);
+            return dispatch({
+            type: GET_COUNTRY_BY_NAME,
+            payload: response.data
+        })
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+}
+
 export function orderCountriesByName(payload) {
+    console.log('payload', payload);
     return {
         type: ORDER_ALPHABETICALLY_BY_NAME,
         payload

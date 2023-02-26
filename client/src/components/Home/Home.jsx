@@ -6,6 +6,7 @@ import { getCountries, filterCountriesByContinent, filterByAct, getActivities, o
 import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import Paged from '../Paged/Paged';
+import SearchBar from '../SearchBar/SearchBar';
 
 export default function Home() {
 
@@ -107,6 +108,7 @@ export default function Home() {
                     allCountries={ allCountries.length }
                     paged={ paged }
                 />
+        <SearchBar/>
             {
                 currentCountries?.map(country => {
                     return (

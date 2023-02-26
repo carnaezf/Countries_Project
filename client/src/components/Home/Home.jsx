@@ -2,7 +2,7 @@ import style from './home.module.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCountries, filterCountriesByContinent, filterByAct, getActivities } from '../../redux/actions'
+import { getCountries, filterCountriesByContinent, filterByAct, getActivities, orderCountriesByName } from '../../redux/actions'
 import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import Paged from '../Paged/Paged';
@@ -16,6 +16,8 @@ export default function Home() {
     const activities = useSelector(state => state.allActivities);
     console.log(activities);
 
+    const [orden, setOrden] = useState('')
+    console.log(orden);
 
     const [currentPage, setCurentPage] = useState(1);
     const [countriesPerPage, setCountriesPerPage] = useState(10);
@@ -30,12 +32,19 @@ export default function Home() {
     useEffect(() => {
         dispatch(getCountries())
         dispatch(getActivities())
-    }, [dispatch])
+    }, [ dispatch ])
 
     // Esto es un reseteo.
     function handleClick(event) {
         event.preventDefault();
         dispatch(getCountries())
+    }
+
+    function handleSortByName(event) {
+        event.preventDefault();
+        dispatch(orderCountriesByName(event.target.value))
+        setCurentPage(1)
+        setOrden(`Ordered ${event.target.value}`)
     }
 
     // Esto es un filtro.
@@ -44,6 +53,7 @@ export default function Home() {
         dispatch(filterCountriesByContinent(event.target.value))
     }
 
+    // Este es un bug por resolver.
     function handleFilterByAct(event){
         event.preventDefault()
         event.target.value === "none" ? dispatch(getCountries()):
@@ -62,9 +72,9 @@ export default function Home() {
             </div>
                 <div>
                     Alphabetically sort by name:
-                    <select>
-                        <option value="asc">Ascendant</option>
-                        <option value="desc">Descending</option>
+                    <select onChange={event => handleSortByName(event)} >
+                        <option value="asc">Ascend</option>
+                        <option value="desc">Descend</option>
                     </select>
                 </div>
                 <div>
@@ -81,8 +91,8 @@ export default function Home() {
                     </select>
                 </div>
                 <div>
-                    {/* Search by Activity:
-                    {(activities?.length === 0)? <p>No activities have been created</p> :
+                    Search by Activity:
+                    {/* {(activities?.length === 0)? <p>No activities have been created</p> :
                     <select onChange={e => handleFilterByAct(e)}>
                     <option value="none"></option>
                     {activities.map(e => (

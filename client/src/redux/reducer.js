@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, FILTER_COUNTRIES_BY_CONTINENT,GET_TOURIST_ACTIVITIES } from './actions-types'
+import { GET_COUNTRIES, FILTER_COUNTRIES_BY_CONTINENT,ORDER_ALPHABETICALLY_BY_NAME ,GET_TOURIST_ACTIVITIES } from './actions-types'
 
 
 const initialState = {
@@ -25,8 +25,33 @@ function rootReducer (state=initialState, action) {
             return{
                 ...state,
                 allActivities: action.payload
-            }           
-            
+            }
+        case ORDER_ALPHABETICALLY_BY_NAME:
+            let sortedArray = action.payload === 'asc'?
+            state.countries.sort((a,b) => {
+                if(a.name > b.name){
+                    return 1;
+                }
+                if(a.name < b.name){
+                    return -1;
+                }
+                return 0;
+            })
+            : 
+            state.countries.sort((a,b) => {
+                if(a.name > b.name){
+                    return -1;
+                }
+                if(a.name < b.name){
+                    return 1;
+                }
+                return 0;
+            })
+            return{
+                ...state,
+                countries: sortedArray
+            }
+
 
         default:
             return state;

@@ -1,5 +1,11 @@
 import axios from 'axios';
-import { GET_COUNTRIES, FILTER_COUNTRIES_BY_CONTINENT, GET_TOURIST_ACTIVITIES, FILTER_BY_ACTIVITIES} from './actions-types'
+import { 
+        GET_COUNTRIES, 
+        FILTER_COUNTRIES_BY_CONTINENT, 
+        GET_TOURIST_ACTIVITIES, 
+        FILTER_BY_ACTIVITIES, 
+        ORDER_ALPHABETICALLY_BY_NAME,
+        } from './actions-types'
 
 
 export function getCountries() {
@@ -11,6 +17,13 @@ export function getCountries() {
         })
     }
 };
+
+export function orderCountriesByName(payload) {
+    return {
+        type: ORDER_ALPHABETICALLY_BY_NAME,
+        payload
+    }
+}
 
 export function filterCountriesByContinent(payload) {
     console.log('payload', payload);
@@ -40,4 +53,6 @@ export function getActivities(){
             .catch((err) => console.log(err));
         };
 };
+
+
 

@@ -22,7 +22,7 @@ export default function Form() {
         difficulty: '',
         duration: '',
         season: '',
-        id: []
+        idCountry: []
     });
 
     useEffect(() => {
@@ -45,7 +45,7 @@ export default function Form() {
     function handleSelect(e) {
         setInput({
             ...input,
-            id: [...input.id, e.target.value]
+            idCountry: [...input.idCountry, e.target.value]
         });
     }
 
@@ -61,7 +61,7 @@ export default function Form() {
             difficulty: '',
             duration: '',
             season: '',
-            id: []
+            idCountry: []
         });
     }
 
@@ -70,7 +70,7 @@ export default function Form() {
     function handleDelete(e) {
         setInput({
             ...input,
-            id: input.id.filter((id) => id !== e.target.value)
+            idCountry: input.idCountry.filter((id) => id !== e.target.value)
         });
     }   
 
@@ -132,7 +132,7 @@ export default function Form() {
                         </button>
                 </form>
                 <div>
-                {input.id.map((e) => {
+                {input.idCountry.map((e) => {
                 return (
                     <div className={style.containerID}>
                         <h5 className={style.pais}>{e}</h5>

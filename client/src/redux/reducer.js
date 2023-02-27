@@ -3,13 +3,15 @@ import {
         FILTER_COUNTRIES_BY_CONTINENT,
         ORDER_ALPHABETICALLY_BY_NAME,
         GET_TOURIST_ACTIVITIES,
-        GET_COUNTRY_BY_NAME
+        GET_COUNTRY_BY_NAME,
+        POST_COUNTRY
         } from './actions-types'
 
 
 const initialState = {
     countries: [],
-    allCountries: []
+    allCountries: [],
+    activities: []
 }
 
 function rootReducer (state=initialState, action) {
@@ -26,6 +28,8 @@ function rootReducer (state=initialState, action) {
                 countries: action.payload
             }
             
+        
+        
         case FILTER_COUNTRIES_BY_CONTINENT:
             const allCountries = state.allCountries;
             const continentFiltered = action.payload === 'All' ? allCountries : allCountries.filter(country => country.continent === action.payload);
@@ -36,8 +40,14 @@ function rootReducer (state=initialState, action) {
         case GET_TOURIST_ACTIVITIES:
             return{
                 ...state,
-                allActivities: action.payload
+                activities: action.payload
             }
+
+        case POST_COUNTRY:
+            return{
+                ...state,
+            }
+
         case ORDER_ALPHABETICALLY_BY_NAME:
             let sortedArray = action.payload === 'asc'?
             state.countries.sort((a,b) => {

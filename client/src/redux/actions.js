@@ -5,8 +5,7 @@ import {
         GET_TOURIST_ACTIVITIES, 
         FILTER_BY_ACTIVITIES, 
         ORDER_ALPHABETICALLY_BY_NAME,
-        GET_COUNTRY_BY_NAME
-
+        GET_COUNTRY_BY_NAME,
         } from './actions-types'
 
 
@@ -73,5 +72,13 @@ export function getActivities(){
         };
 };
 
+
+export function postCountrie(payload) {
+    return async function(dispatch) {
+        const response = axios.post('http://localhost:3001/activities/', payload);
+        console.log('response', response);
+        return response;
+    }
+}
 
 

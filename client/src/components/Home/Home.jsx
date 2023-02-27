@@ -14,7 +14,7 @@ export default function Home() {
     const allCountries = useSelector(state => state.countries);
     console.log(allCountries);
 
-    const activities = useSelector(state => state.allActivities);
+    const activities = useSelector(state => state.activities);
     console.log(activities);
 
     const [orden, setOrden] = useState('')

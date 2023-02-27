@@ -1,0 +1,145 @@
+/* .container {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.06)), url("../../assets/activity.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.title {
+    font-family:  'Gill Sans MT';
+    font-size: 1.7rem;
+    font-weight: bolder;
+    margin-top: 4rem;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+    align-items: center;
+    width: 21rem;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: .8rem;
+    backdrop-filter: blur(50px);
+    color: black;
+    background: linear-gradient(to top,
+            right rgb(198, 196, 196) 0%,
+            rgba(255, 251, 251, 0.12) 20%);
+}
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    background-color: rgba(109, 108, 108, 0.5);
+    font-weight: 800;
+    font-size: 1em;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 2.5rem;
+    margin: 12px;
+
+    backdrop-filter: blur(1px);
+}
+
+.btn:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    transform: translateY(-1px);
+    border-bottom: 1px solid white;
+}
+
+.link {
+    text-decoration: none;
+    color: white
+}
+
+.labels {
+    color: black;
+    font-family:  'Gill Sans MT';
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: left;
+    margin: 2rem;    
+}
+
+.inputs {
+    width: 20rem;
+    height: 30px ;
+    border-color: rgba(239, 236, 216, 0.69);
+    border-radius: 7px;
+    font-size: 1rem;
+    color:grey;
+    margin: 10px 0 20px 0;
+    padding-left: 15px;
+}
+
+.selectInputs {
+    width: 21.5rem;
+    height: 34px ;
+    border-color: rgba(239, 236, 216, 0.69);
+    border-radius: 7px;
+    font-size: 1rem;
+    color: grey;
+    margin: 10px 0 20px 0;
+    padding-left: 15px;
+     
+}
+
+.btnCreate {
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    border-radius: .5rem;
+    margin: .2rem;
+    margin-top: 1rem;
+    padding: .3rem;
+    cursor: pointer;
+    transition: .3s;
+    height: 2.3rem;
+    width: 9rem;
+    
+    grid-column: span 2;
+    justify-self: center;
+}
+
+.btnCreate:hover {
+    color: black;
+    background-color: white;
+}
+
+
+.containerID {
+    display: inline-flex;
+    flex-flow: row;
+    margin: 1rem;
+}
+
+.pais {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.3rem;
+    margin: .4rem;
+    padding: .2rem;
+    font-weight: bold;
+}
+
+.cruz {
+    font-size: .6rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border-radius: .2rem;
+    height: fit-content;
+    width: fit-content;
+    cursor: pointer;
+} */

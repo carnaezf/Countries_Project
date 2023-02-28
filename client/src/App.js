@@ -13,7 +13,8 @@ function App() {
           <Route exact path="/" component={ LandingPage }/>
           <Route path="/home" component={ Home }/>
           <Route path="/activities" component={ Form }/>
-          <Route path="/home" component={ Detail }/>
+          <Route path="/countries/:id" component={ Detail }/>
+          
         </Switch>
 
       </div>

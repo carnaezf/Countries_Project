@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import Paged from '../Paged/Paged';
 import SearchBar from '../SearchBar/SearchBar';
+import Form from '../Form/Form';
 
 export default function Home() {
 
@@ -64,7 +65,12 @@ export default function Home() {
 
     return (
         <div >
-            <Link to='/activities'>Create Activity</Link>
+            <Link to='/countries/MEX'>
+                <button className={style.boton}>id</button>
+            </Link>
+            <Link to='/activities'>
+                <button className={style.boton}>Create Activity</button>
+            </Link>
             <h1>HOME COUNTRIES</h1>
             <button onClick={ event => handleClick(event)}>
                 Reload all countries
@@ -113,7 +119,7 @@ export default function Home() {
                 currentCountries?.map(country => {
                     return (
                         <div className='home'>
-                            <Link to={`/home/${country.id}`} >
+                            <Link to={`/countries/${country.id}`} >
                                 <Card
                                     key={country.id}
                                     id={country.id}

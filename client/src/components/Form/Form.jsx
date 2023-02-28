@@ -14,7 +14,8 @@ export default function Form() {
         dispatch(getCountries())
     }, [dispatch])
 
-    const listCountries = useSelector((state) => state.countries);
+    const listCountries = useSelector((state) => state.countries);  
+    console.log(listCountries);
 
     const [ errors, setErrors ] = useState({});
     const [ input, setInput ] = useState({
@@ -25,7 +26,10 @@ export default function Form() {
         idCountry: []
     });
 
-    useEffect(() => {
+    console.log(input);
+    console.log(errors);
+
+    useEffect(() => {   
         dispatch(getCountries())
     }, [dispatch])
 
@@ -48,6 +52,8 @@ export default function Form() {
             idCountry: [...input.idCountry, e.target.value]
         });
     }
+
+
 
     //"handleSubmit" --> para manejar el envío del formulario.
 //Valida la información de "input" y, si es válida, envía una acción de "postActivities" al almacenamiento de Redux y navega a la página principal
@@ -76,7 +82,11 @@ export default function Form() {
 
     return(
         <div className={style.container}>
+            <Link to='/home'>
+                <button className={style.boton}>Back</button>
+            </Link>
             <h1>Create a tourist activity</h1>
+            {console.log(input)};
 
             <div className={style.form}>
                 <form onSubmit={ (e) => handleSubmit(e)}>   

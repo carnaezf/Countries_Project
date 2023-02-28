@@ -4,14 +4,16 @@ import {
         ORDER_ALPHABETICALLY_BY_NAME,
         GET_TOURIST_ACTIVITIES,
         GET_COUNTRY_BY_NAME,
-        POST_COUNTRY
+        POST_COUNTRY,
+        GET_DETAIL
         } from './actions-types'
 
 
 const initialState = {
     countries: [],
     allCountries: [],
-    activities: []
+    activities: [],
+    allDetail: []
 }
 
 function rootReducer (state=initialState, action) {
@@ -73,7 +75,11 @@ function rootReducer (state=initialState, action) {
                 ...state,
                 countries: sortedArray
             }
-
+        case GET_DETAIL:
+            return{
+                ...state,
+                detail: action.payload
+            }
 
         default:
             return state;

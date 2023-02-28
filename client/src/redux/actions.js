@@ -6,6 +6,7 @@ import {
         FILTER_BY_ACTIVITIES, 
         ORDER_ALPHABETICALLY_BY_NAME,
         GET_COUNTRY_BY_NAME,
+        GET_DETAIL
         } from './actions-types'
 
 
@@ -86,6 +87,17 @@ export function postActivity (payload){
         const response = await axios.post('http://localhost:3001/activities/', payload)
         console.log(response)
         return response
+    }
+}
+
+export function getdetail(id) {
+    console.log('id', id);
+    return async function(dispatch) {
+        const response = await axios.get(`http://localhost:3001/countries/${id}`);
+        return dispatch({
+            type: GET_DETAIL,
+            payload: response.data
+        })
     }
 }
 

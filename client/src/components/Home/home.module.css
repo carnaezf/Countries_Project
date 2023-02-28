@@ -1,8 +1,8 @@
 .home {
     display: inline-block;
-    border: solid 1px black;
+    border: solid 1.5px darkred;
 }
 
 .filters {
-    border: solid 1px black;
+    border: solid 1.5px darkblue;
 }

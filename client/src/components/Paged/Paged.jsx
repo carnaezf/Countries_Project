@@ -10,7 +10,7 @@ export default function Paged({ countriesPerPage, allCountries, paged }) {
     // Debug print.
     console.log(pageNumbers);
     return (
-        <nav>
+        <nav className={style.paged}>
             <ul>
                 {
                     pageNumbers &&

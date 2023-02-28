@@ -30,24 +30,28 @@ export default function Detail(props) {
 
     return (
         <div>
-            {
-                myCountry?.length > 0 ?
-                <p>Loading ...</p>
-                :
-                <div>
-                    <img  src={myCountry.flag} alt="Img. not available" />
-                    <h2>{myCountry.name}</h2>
-                    <h4>{myCountry.continent}</h4>
-                    <h4>{myCountry.id}</h4>
-                    <h4>Capital: {myCountry.capital}</h4>
-                    <h4 >Región: {myCountry.subregion}</h4>
-                    <h4 >Área: {myCountry.area} km²</h4>
-                    <h4 >Población: {myCountry.population} Hab.</h4>
-                </div> 
-            }
-            <Link to='/home'>
-                <button className={style.boton}>Back</button>
-            </Link>
+            <div className={style.detail}>
+                {
+                    myCountry?.length > 0 ?
+                    <p>Loading ...</p>
+                    :
+                    <div>
+                        <h2>{myCountry.name}</h2>
+                        <h4>{myCountry.continent}</h4>
+                        <h4>{myCountry.id}</h4>
+                        <h4>Capital: {myCountry.capital}</h4>
+                        <h4 >Región: {myCountry.subregion}</h4>
+                        <h4 >Área: {myCountry.area} km²</h4>
+                        <h4 >Población: {myCountry.population} Hab.</h4>
+                        <img  src={myCountry.flag} alt="Img. not available" />
+                    </div> 
+                }
+            </div>
+            <div>
+                <Link to='/home'>
+                    <button className={style.boton}>Back</button>
+                </Link>
+            </div>
         </div>
     )
 }

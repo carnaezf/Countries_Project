@@ -1,4 +1,4 @@
-// import style from './detail.module.css';
+import style from './navbar.module.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
@@ -6,7 +6,7 @@ import SearchBar from '../SearchBar/SearchBar';
 
 const NavBar = () => {
     return (
-        <div>
+        <div className={style.nav}>
         {/* <div className={style.nav}> */}
             <Link to='/home'>
                 {/* <button className={style.boton}>Home</button> */}

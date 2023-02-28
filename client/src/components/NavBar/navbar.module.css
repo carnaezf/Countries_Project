@@ -1,0 +1,6 @@
+.nav {
+    border: solid 1.5px darkred;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    }

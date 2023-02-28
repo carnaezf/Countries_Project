@@ -64,14 +64,13 @@ export default function Home() {
     }
 
     return (
-        <div >
+        <div className={style.home} >
             <h1>HOME COUNTRIES</h1>
             <button onClick={ event => handleClick(event)}>
                 Reload all countries
             </button>
             <div className={style.filters}>
-            </div>
-                <div>
+                <div >
                     Alphabetically sort by name:
                     <select onChange={event => handleSortByName(event)} >
                         <option value="asc">Ascend</option>
@@ -102,6 +101,7 @@ export default function Home() {
                 </select>
                 }
                 </div>
+            </div>
             <div>
                 <Paged
                     countriesPerPage={ countriesPerPage }

@@ -82,9 +82,6 @@ export default function Form() {
 
     return(
         <div className={style.container}>
-            <Link to='/home'>
-                <button className={style.boton}>Back</button>
-            </Link>
             <h1>Create a tourist activity</h1>
             {console.log(input)};
 

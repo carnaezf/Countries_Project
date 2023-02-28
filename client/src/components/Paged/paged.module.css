@@ -1,6 +1,6 @@
 .paged {
     display: flex;
-    border: solid 1px black;
+    border: solid 1.5px darkred;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;

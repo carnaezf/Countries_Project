@@ -43,7 +43,6 @@ export default function Detail(props) {
                     <h4 >Región: {myCountry.subregion}</h4>
                     <h4 >Área: {myCountry.area} km²</h4>
                     <h4 >Población: {myCountry.population} Hab.</h4>
-                    {/* {console.log(myCountry)}; */}
                 </div> 
             }
             <Link to='/home'>

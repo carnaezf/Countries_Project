@@ -10,9 +10,13 @@ export default function Detail(props) {
     console.log(props);
 
     const dispatch = useDispatch();
+
+    const myCountry = useSelector(state => state.detail);
     // const country = useSelector(state => state.detail);
+
     const history = useHistory();
     const id = props.match.params.id
+    console.log(id);
 
 
 
@@ -20,7 +24,8 @@ export default function Detail(props) {
         dispatch(getdetail(id))
     },[dispatch, id])
 
-    const myCountry = useSelector(state => state.detail);
+
+
     console.log(myCountry);
 
     return (

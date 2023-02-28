@@ -13,7 +13,7 @@ const initialState = {
     countries: [],
     allCountries: [],
     activities: [],
-    allDetail: []
+    detail: []
 }
 
 function rootReducer (state=initialState, action) {

@@ -91,7 +91,6 @@ export function postActivity (payload){
 }
 
 export function getdetail(id) {
-    console.log('id', id);
     return async function(dispatch) {
         const response = await axios.get(`http://localhost:3001/countries/${id}`);
         return dispatch({

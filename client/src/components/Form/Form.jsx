@@ -83,7 +83,7 @@ export default function Form() {
     return(
         <div className={style.container}>
             <h1>Create a tourist activity</h1>
-            {console.log(input)};
+            {console.log(input)}
 
             <div className={style.form}>
                 <form onSubmit={ (e) => handleSubmit(e)}>   

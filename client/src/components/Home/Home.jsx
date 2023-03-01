@@ -6,6 +6,7 @@ import { getCountries, filterCountriesByContinent, filterByAct, getActivities, o
 import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import Paged from '../Paged/Paged';
+import SearchBar from '../SearchBar/SearchBar';
 
 
 
@@ -66,10 +67,10 @@ export default function Home() {
     return (
         <div className={style.home} >
             <h1>HOME COUNTRIES</h1>
-            <button onClick={ event => handleClick(event)}>
-                Reload all countries
-            </button>
             <div className={style.filters}>
+                <button onClick={ event => handleClick(event)}>
+                    Reload all countries
+                </button>
                 <div >
                     Alphabetically sort by name:
                     <select onChange={event => handleSortByName(event)} >
@@ -100,6 +101,9 @@ export default function Home() {
                     ))}
                 </select>
                 }
+                </div>
+                <div>
+                    <SearchBar />
                 </div>
             </div>
             <div>

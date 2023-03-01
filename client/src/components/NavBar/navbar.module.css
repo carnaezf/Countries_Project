@@ -1,6 +1,27 @@
 .nav {
-    border: solid 1.5px darkred;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    background-color: #748cc1;
+    text-align: left;
     }
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.nav a {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: #ccc88c;
+    color: black;
+}

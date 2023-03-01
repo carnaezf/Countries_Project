@@ -10,14 +10,16 @@
 }
 
 .nav li {
-    display: block;
+    display: inline-block;
     margin: 0 10px;
 }
 
 .nav a {
     color: white;
-    text-decoration: none;
     display: block;
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
 }
 
 .nav a:hover {

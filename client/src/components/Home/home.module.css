@@ -1,11 +1,11 @@
 .home {
     display: inline-block;
-    border: solid 1px darkred;
+    /* border: solid 1px darkred; */
     color: white;
 }
 
 .filters {
-    border: solid 1.5px darkblue;
+    /* border: solid 1.5px darkblue; */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

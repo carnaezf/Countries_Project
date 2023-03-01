@@ -67,9 +67,6 @@ export default function Home() {
     return (
         <div className={style.home} >
             <div className={style.filters}>
-                <button onClick={ event => handleClick(event)}>
-                    Reload all countries
-                </button>
                 <div >
                     Alphabetically sort by name:
                     <select onChange={event => handleSortByName(event)} >
@@ -105,7 +102,9 @@ export default function Home() {
                     <SearchBar />
                 </div>
             </div>
-
+            <button onClick={ event => handleClick(event)}>
+                    Reload all countries
+            </button>
             <div className={style.cards}>
             {
                 currentCountries?.map(country => {

@@ -66,7 +66,6 @@ export default function Home() {
 
     return (
         <div className={style.home} >
-            <h1>HOME COUNTRIES</h1>
             <div className={style.filters}>
                 <button onClick={ event => handleClick(event)}>
                     Reload all countries
@@ -106,16 +105,12 @@ export default function Home() {
                     <SearchBar />
                 </div>
             </div>
-            <div>
-                <Paged
-                    countriesPerPage={ countriesPerPage }
-                    allCountries={ allCountries.length }
-                    paged={ paged }
-                />
+
+            <div className={style.cards}>
             {
                 currentCountries?.map(country => {
                     return (
-                        <div className='home'>
+                        <div>
                             <Link to={`/countries/${country.id}`} >
                                 <Card
                                     key={country.id}
@@ -131,6 +126,11 @@ export default function Home() {
                 )
             }
             </div>
+            <Paged
+                    countriesPerPage={ countriesPerPage }
+                    allCountries={ allCountries.length }
+                    paged={ paged }
+                />
         </div>
     )
 }

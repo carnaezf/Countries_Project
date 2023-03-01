@@ -1,8 +1,28 @@
 .home {
     display: inline-block;
-    border: solid 1.5px darkred;
+    border: solid 1px darkred;
+    color: white;
 }
 
 .filters {
     border: solid 1.5px darkblue;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color:#2d3f5d;
+    height: 40px;
+
+}
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: center;
+}
+
+.filter a:hover {
+    background-color: #ccc88c;
+    color: black;
 }

@@ -72,12 +72,15 @@ export default function Form() {
         });
     }
 
+    
+
     //"handleDelete" --> para borrar los paises(id) q haya seleccionado en el form, va a crear un nuevo array con
 // todos los que no sean el elemento que le hice click
     function handleDelete(e) {
+
         setInput({
             ...input,
-            countries: input.countries.filter((id) => id !== e.target.value)
+            countries: input.countries.filter((country) => country !== e)
         });
     }   
 

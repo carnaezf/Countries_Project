@@ -23,7 +23,7 @@ export default function Form() {
         difficulty: '',
         duration: '',
         season: '',
-        idCountry: []
+        countries: []
     });
 
     console.log(input);
@@ -49,7 +49,7 @@ export default function Form() {
     function handleSelect(e) {
         setInput({
             ...input,
-            idCountry: [...input.idCountry, e.target.value]
+            countries: [...input.countries, e.target.value]
         });
     }
 
@@ -67,7 +67,8 @@ export default function Form() {
             difficulty: '',
             duration: '',
             season: '',
-            idCountry: []
+            // idCountry: []
+            countries: []
         });
     }
 
@@ -76,7 +77,7 @@ export default function Form() {
     function handleDelete(e) {
         setInput({
             ...input,
-            idCountry: input.idCountry.filter((id) => id !== e.target.value)
+            countries: input.countries.filter((id) => id !== e.target.value)
         });
     }   
 
@@ -98,6 +99,19 @@ export default function Form() {
                             handleChange(e);
                             }}/>
                     {errors.name && <p style={{color: 'red'}}>{errors.name}</p>}
+                    </div>
+                    <div>
+                        <label className={style.labels}>Duration: </label>
+                        <input
+                            className={style.inputs}
+                            type="number"
+                            name="duration"
+                            placeholder='Duration...'
+                            value={input.duration}
+                            onChange={(e) => {
+                            handleChange(e);
+                            }}/>
+                        {errors.duration && <p style={{color: 'red'}}>{errors.duration}</p>}
                     </div>
                     <div>
                         <label className={style.labels}>Difficulty: </label>
@@ -139,7 +153,7 @@ export default function Form() {
                         </button>
                 </form>
                 <div>
-                {input.idCountry.map((e) => {
+                {input.countries?.map((e) => {
                 return (
                     <div className={style.containerID}>
                         <h5 className={style.pais}>{e}</h5>

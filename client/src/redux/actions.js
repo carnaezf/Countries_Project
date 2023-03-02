@@ -6,7 +6,8 @@ import {
         FILTER_BY_ACTIVITIES, 
         ORDER_ALPHABETICALLY_BY_NAME,
         GET_COUNTRY_BY_NAME,
-        GET_DETAIL
+        GET_DETAIL,
+        POST_ACTIVITY
         } from './actions-types'
 
 
@@ -78,17 +79,55 @@ export function postCountrie(payload) {
     return async function(dispatch) {
         const response = axios.post('http://localhost:3001/activities/', payload);
         console.log('response', response);
-        return response;
+        return (
+            dispatch({
+                type: POST_ACTIVITY,
+                payload: response.data
+            })
+        )
     }
 }
+
+// export function postCountrie(payload) {
+//     return async function(dispatch) {
+//         const response = axios.post('http://localhost:3001/activities/', payload);
+//         console.log('response', response);
+//         return response;
+//     }
+// }
+
+
+
+
+
+
+
+
+
 
 export function postActivity (payload){
     return async function(dispatch){
         const response = await axios.post('http://localhost:3001/activities/', payload)
         console.log(response)
-        return response
+        return (
+            dispatch({
+                type: POST_ACTIVITY,
+                payload: response.data
+            })
+        )
     }
 }
+
+
+// export function postActivity (payload){
+//     return async function(dispatch){
+//         const response = await axios.post('http://localhost:3001/activities/', payload)
+//         console.log(response)
+//         return response
+//     }
+// }
+
+
 
 export function getdetail(id) {
     return async function(dispatch) {

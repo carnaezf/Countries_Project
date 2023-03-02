@@ -4,8 +4,9 @@ import {
         ORDER_ALPHABETICALLY_BY_NAME,
         GET_TOURIST_ACTIVITIES,
         GET_COUNTRY_BY_NAME,
+        GET_DETAIL,
         POST_COUNTRY,
-        GET_DETAIL
+        POST_ACTIVITY 
         } from './actions-types'
 
 
@@ -45,7 +46,7 @@ function rootReducer (state=initialState, action) {
                 activities: action.payload
             }
 
-        case POST_COUNTRY:
+        case POST_ACTIVITY:
             return{
                 ...state,
             }

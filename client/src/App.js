@@ -6,6 +6,10 @@ import Form from './components/Form/Form';
 import Detail from './components/Detail/Detail';
 import NavBar from './components/NavBar/NavBar';
 
+// Deploy:
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:3001/';
+
 function App() {
 
 

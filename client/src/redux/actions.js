@@ -13,7 +13,7 @@ import {
 
 export function getCountries() {
     return async function(dispatch) {
-        const response = await axios.get('http://localhost:3001/countries/');
+        const response = await axios.get('/countries/');
         return dispatch({
             type: GET_COUNTRIES,
             payload: response.data
@@ -25,7 +25,7 @@ export function getCountries() {
 export function getCountryByName(name) {
     return async function(dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3001/countries?name=${name}`);
+            const response = await axios.get(`/countries?name=${name}`);
             return dispatch({
             type: GET_COUNTRY_BY_NAME,
             payload: response.data
@@ -63,7 +63,7 @@ export function filterByAct(activity) {
 export function getActivities(){
     return (dispatch) => {
         axios
-            .get('http://localhost:3001/activities/')
+            .get('/activities/')
             .then((info) => {
                 return dispatch({
                     type: GET_TOURIST_ACTIVITIES,
@@ -77,7 +77,7 @@ export function getActivities(){
 
 export function postCountrie(payload) {
     return async function(dispatch) {
-        const response = axios.post('http://localhost:3001/activities/', payload);
+        const response = axios.post('/activities/', payload);
         console.log('response', response);
         return (
             dispatch({

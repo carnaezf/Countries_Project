@@ -49,9 +49,10 @@ export default function Form() {
     function handleSelect(e) {
         setInput({
             ...input,
-            countries: [...input.countries, e.target.value]
+            countries: [...input.countries, e.target.value],
         });
     }
+
 
 
 
@@ -67,7 +68,6 @@ export default function Form() {
             difficulty: '',
             duration: '',
             season: '',
-            // idCountry: []
             countries: []
         });
     }
